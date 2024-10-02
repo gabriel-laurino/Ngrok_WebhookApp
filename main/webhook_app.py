@@ -41,12 +41,12 @@ def webhook():
                 if (
                     data["data"]["action"] == "created"
                     and "performedby_clientname" in data["data"]
-                    and data["data"]["performedby_clientname"] == "ADSync"
+                    and data["data"]["performedby_clientname"] == "DesiredClientName"
                 ):
                     # Extract the email data using the function from email_service
                     first_name, last_name, full_name, recipient_email, department = extract_email_data(data)
 
-                    subject = "New user created via ADSync"
+                    subject = "New user created via DesiredClientName"
 
                     # Create a formatted welcome message using the email_service function
                     message = create_welcome_message(first_name, last_name, full_name, recipient_email, department)
@@ -56,7 +56,7 @@ def webhook():
                     else:
                         return response_failure("Failed to send email.")
                 else:
-                    # If the event wasn't from ADSync, return status 200 for non-relevant event
+                    # If the event wasn't from DesiredClientName, return status 200 for non-relevant event
                     return response_not_relevant()
             else:
                 # If 'data' is not present, return 'data not found in payload'
