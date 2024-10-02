@@ -27,7 +27,7 @@ The project is built using:
 │   ├── crypto_env.py          # Encrypts credentials and stores them in environment variables.
 │   ├── crypto_manager.py      # Decrypts credentials and retrieves stored data.
 ├── mail
-│   ├── email_service.py       # Contains logic to send emails and create email messages.
+│   ├── mail_service.py       # Contains logic to send emails and create email messages.
 ├── util
 │   ├── messages_codes.py      # Abstracts response messages and status codes.
 ├── main
